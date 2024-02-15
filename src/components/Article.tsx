@@ -31,24 +31,30 @@ export const Article = () => {
 		<Container className="mt-4">
 			<Row>
 				<Col>
-					{isLoading && <Spinner animation="border" role="status" />}
-					{isError && <Alert>Something went wrong...</Alert>}
+					<div className="text-center">
+						{isLoading && <Spinner animation="border" role="status" />}
+						{isError && <Alert>Something went wrong...</Alert>}
+					</div>
 					{!isError && !isLoading && (
 						<article>
-							<img
-								src={article?.image_url}
-								alt={article?.title}
-								className="img-fluid"
-							/>
-							<h1>{article?.title}</h1>
-							<p>
+							<div className="text-center">
+								<img
+									src={article?.image_url}
+									alt={article?.title}
+									className="img-fluid"
+								/>
+							</div>
+							<h1 className="text-center">{article?.title}</h1>
+							<p className="text-center">
 								<a
 									href={article?.url}
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									Source
-								</a>
+									{article?.news_site}
+								</a>{" "}
+								&#183;{" "}
+								{article ? new Date(article.published_at).toDateString() : ""}
 							</p>
 							<p>{article?.summary}</p>
 						</article>

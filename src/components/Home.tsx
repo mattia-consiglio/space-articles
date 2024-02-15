@@ -34,8 +34,8 @@ export const Home = () => {
 				</Col>
 			</Row>
 			{(isLoading || isError) && (
-				<Row>
-					<Col>
+				<Row className="mt-4">
+					<Col className="text-center">
 						{isLoading && <Spinner animation="border" role="status" />}
 						{isError && <Alert>Something went wrong...</Alert>}
 					</Col>

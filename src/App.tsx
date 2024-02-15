@@ -1,4 +1,3 @@
-import { Card } from "react-bootstrap";
 import { Home } from "./components/Home";
 import Navigation from "./components/Navigation";
 import { Route, Routes } from "react-router-dom";
